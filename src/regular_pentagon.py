@@ -48,15 +48,15 @@ pentagon = RegularPentagon()
 side_length = float(args.perimeter)/pentagon.sides
 center_point = string.split(args.center, ",")
 center = Point(float(center_point[0]), float(center_point[1]))
-apothem = side_length / (2*math.tan(math.radians(180/pentagon.sides)))
-
+apothem = side_length / (2*math.tan(math.radians(180)/pentagon.sides))
+                         
 # Some convenience variables
 sin54 = math.sin(math.radians(54))
 sin72 = math.sin(math.radians(72))
 sin90 = math.sin(math.radians(90))
 
 # The radius of circumcircle.
-radius = side_length / ( sin54 + sin72 )
+radius = (side_length*sin54) / sin72
 
 # Find top point.
 pentagon.top = Point(center.x, center.y+radius)
